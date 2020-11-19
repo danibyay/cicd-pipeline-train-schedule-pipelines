@@ -1,10 +1,10 @@
 pipeline {
-    agent none 
+    agent  {
+        docker 'danibish/my-slave-nexus:latest'
+    }  
     stages {
         stage('build') {
-            agent {
-                docker 'danibish/my-slave-nexus:latest'
-            }   
+              
             steps {
                 sh './gradlew build --no-daemon'
             }
