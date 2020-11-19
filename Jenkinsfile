@@ -3,12 +3,7 @@ pipeline {
     stages {
         stage('build') {
             agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    dir 'build'
-                    additionalBuildArgs '--build-arg version=1.0.2'
-                    args '-v /tmp:/tmp'
-                }
+                docker 'danibish/my-slave-nexus:latest'
             }   
             steps {
                 sh './gradlew build --no-daemon'
