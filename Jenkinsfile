@@ -1,6 +1,6 @@
 pipeline {
     agent  {
-        docker 'danibish/my-slave-nexus:latest'
+        docker 'my-slave-nexus:latest'
     }  
     stages {
         stage('build') {
