@@ -1,7 +1,5 @@
 pipeline {
-    agent  {
-        docker 'my-slave-nexus:latest'
-    }  
+    agent  any
     stages {
         stage('build') {
               
